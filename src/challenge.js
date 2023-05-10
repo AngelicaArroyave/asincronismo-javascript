@@ -1,4 +1,4 @@
-const XMLHttpRequest = requiere('xmlhttprequest')
+const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
 const API = 'https://api.escuelajs.co/api/v1'
 
 function fetchData(urlApi, callback) {
@@ -17,3 +17,16 @@ function fetchData(urlApi, callback) {
     }
     xhttp.send() // Envía la petición
 }
+
+fetchData(`${API}/products`, function (error1, data1) {
+    if(error1) return console.error(error1);
+    fetchData(`${API}/products/${data1[0].id}`, function (error2, data2) {
+        if(error2) return console.error(error2);
+        fetchData(`${API}/categories/${data2?.category?.id}`, function (error3, data3) { // Optional chaning
+            if(error3) return console.error(error3);            
+            console.log(data1[0]);
+            console.log(data2.tittle);
+            console.log(data3.name);
+        })
+    })
+})
