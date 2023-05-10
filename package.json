@@ -4,7 +4,8 @@
   "description": "Este repositorio contiene prácticas acerca del asincronismo en JavaScript, del curso hecho en platzi",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "callback": "node ./src/challenge.js"
   },
   "repository": {
     "type": "git",

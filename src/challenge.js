@@ -25,8 +25,8 @@ fetchData(`${API}/products`, function (error1, data1) {
         fetchData(`${API}/categories/${data2?.category?.id}`, function (error3, data3) { // Optional chaning
             if(error3) return console.error(error3);            
             console.log(data1[0]);
-            console.log(data2.tittle);
-            console.log(data3.name);
+            console.log(data2.title); // Modern Frozen Cheese
+            console.log(data3.name); // Electronics
         })
     })
 })
